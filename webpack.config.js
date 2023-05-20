@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const HtmlWebPackPlagin = require('html-webpack-plugin')
 
 module.exports = {
     entry: './src/client/index.js',
@@ -12,5 +13,12 @@ module.exports = {
                 loader: "babel-loader"
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebPackPlagin({
+            template: './scr/client/views/index.html',
+            filename: './index.html',
+        })
+    ]
 }
+
